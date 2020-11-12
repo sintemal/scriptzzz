@@ -1,0 +1,19 @@
+--- build-qemu-android.sh.bak	2020-11-12 14:07:43.293754194 +0000
++++ build-qemu-android.sh	2020-11-12 14:08:17.525804403 +0000
+@@ -294,7 +294,7 @@
+         case $1 in
+             windows*)
+                 # Libusb support on windows is needed for bluetooth passthru
+-                LIBUSB_FLAGS="--enable-libusb --enable-usb-redir"
++                LIBUSB_FLAGS="--disable-libusb --disable-usb-redir"
+                 ;;
+             linux-aarch64)
+                 # TODO(bohu): cross build libusb for aarch64
+@@ -454,6 +454,7 @@
+             --disable-vhost-net \
+             --disable-vnc-sasl \
+             --disable-werror \
++            --disable-usb-redir \
+             --disable-xen \
+             --disable-xen-pci-passthrough \
+             --disable-xfsctl \
